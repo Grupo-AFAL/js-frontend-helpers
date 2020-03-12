@@ -1,0 +1,19 @@
+{
+  "name": "frontend-helpers",
+  "version": "0.1.0",
+  "description": "Collection of Stimulus controllers to enhance HTML components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/grupoafal/js-frontend-helpers.git"
+  },
+  "author": "Federico Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/grupoafal/js-frontend-helpers/issues"
+  },
+  "homepage": "https://gitlab.com/grupoafal/js-frontend-helpers#readme"
+}
