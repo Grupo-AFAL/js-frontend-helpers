@@ -5,7 +5,7 @@ import * as formatters from './utils/formatters'
 
 import DatepickerController from './controllers/datepicker-controller'
 import DropdownController from './controllers/dropdown-controller'
-import DynamicFieldController from './controllers/dynamic-fields-controller'
+import DynamicFieldsController from './controllers/dynamic-fields-controller'
 import NavbarController from './controllers/navbar-controller'
 import NotificationController from './controllers/notification-controller'
 import PhoneInputController from './controllers/phone-input-controller'
@@ -23,7 +23,7 @@ export {
   formatters,
   DatepickerController,
   DropdownController,
-  DynamicFieldController,
+  DynamicFieldsController,
   NavbarController,
   NotificationController,
   PhoneInputController,
