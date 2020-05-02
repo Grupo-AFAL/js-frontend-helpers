@@ -4,6 +4,7 @@
   "description": "Collection of Stimulus controllers to enhance HTML components",
   "main": "src/index.js",
   "module": "src/index.js",
+  "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
