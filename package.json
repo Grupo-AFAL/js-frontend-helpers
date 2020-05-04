@@ -31,6 +31,7 @@
     "bulma-tooltip": "^3.0.2",
     "choices.js": "^9.0.1",
     "flatpickr": "^4.6.3",
+    "lodash.camelcase": "^4.3.0",
     "phone": "^2.4.8"
   }
 }

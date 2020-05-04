@@ -9,6 +9,7 @@ import DynamicFieldsController from './controllers/dynamic-fields-controller'
 import NavbarController from './controllers/navbar-controller'
 import NotificationController from './controllers/notification-controller'
 import PhoneInputController from './controllers/phone-input-controller'
+import RemoteModalController from './controllers/remote-modal-controller'
 import SelectFieldController from './controllers/select-field-controller'
 import SideMenuController from './controllers/side-menu-controller'
 import SubmitButtonController from './controllers/submit-button-controller'
@@ -27,6 +28,7 @@ export {
   NavbarController,
   NotificationController,
   PhoneInputController,
+  RemoteModalController,
   SelectFieldController,
   SideMenuController,
   SubmitButtonController,
