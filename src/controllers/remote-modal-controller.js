@@ -19,7 +19,6 @@ import { serialize } from '../utils/form'
  */
 export default class RemoteModalController extends Controller {
   connect () {
-    console.log('hello')
     this.isWide = true
     this.modal = document.getElementById('modal-template')
     this.background = this.modal.querySelector('.modal-background')
