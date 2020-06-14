@@ -14,6 +14,7 @@ import RadioGroupController from './controllers/radio-group-controller'
 import RemoteModalController from './controllers/remote-modal-controller'
 import SelectFieldController from './controllers/select-field-controller'
 import SideMenuController from './controllers/side-menu-controller'
+import StepNumberInputController from './controllers/step-number-input-controller'
 import SubmitButtonController from './controllers/submit-button-controller'
 import SubmitOnChangeController from './controllers/submit-on-change-controller'
 import TabsController from './controllers/tabs-controller'
@@ -35,6 +36,7 @@ export {
   RemoteModalController,
   SelectFieldController,
   SideMenuController,
+  StepNumberInputController,
   SubmitButtonController,
   SubmitOnChangeController,
   TabsController,
