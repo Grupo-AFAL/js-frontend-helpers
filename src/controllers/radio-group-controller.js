@@ -2,6 +2,8 @@ import { Controller } from 'stimulus'
 
 export default class RadioGroupController extends Controller {
   connect () {
+    this.lowestValue = parseInt(this.element.dataset.start) || 0
+
     this.containersSelector = this.data.get('containers')
     this.radioButtonContainers = Array.from(
       this.element.querySelectorAll(this.containersSelector)
@@ -20,5 +22,8 @@ export default class RadioGroupController extends Controller {
     })
 
     event.target.closest(this.containersSelector).classList.add('selected')
+
+    this.element.dataset.selected =
+      parseInt(event.target.value) - this.lowestValue
   }
 }

@@ -10,7 +10,11 @@ export default class StepNumberInputController extends Controller {
     this.setValue()
 
     this.inputTarget.addEventListener('change', e => {
-      this.value = parseInt(e.target.value) || 0
+      const newValue = parseInt(e.target.value) || 0
+
+      if (newValue == this.value) return
+
+      this.value = newValue
       this.setValue()
     })
   }
@@ -19,12 +23,14 @@ export default class StepNumberInputController extends Controller {
     e.preventDefault()
     this.value += 1
     this.setValue()
+    this.triggerChangeEvent()
   }
 
   subtract (e) {
     e.preventDefault()
     this.value -= 1
     this.setValue()
+    this.triggerChangeEvent()
   }
 
   setValue () {
@@ -42,5 +48,11 @@ export default class StepNumberInputController extends Controller {
     } else {
       this.subtractTarget.classList.remove('is-static')
     }
+  }
+
+  triggerChangeEvent () {
+    const event = document.createEvent('HTMLEvents')
+    event.initEvent('change', false, true)
+    this.inputTarget.dispatchEvent(event)
   }
 }
