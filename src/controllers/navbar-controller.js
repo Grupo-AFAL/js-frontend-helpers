@@ -1,10 +1,11 @@
-import { Controller } from "stimulus"
+import { Controller } from 'stimulus'
 
 export default class NavbarController extends Controller {
-  static targets = ['menu']
+  static targets = ['menu', 'burger']
 
-  toggleMenu (e) {
-    e.preventDefault()
+  toggleMenu (event) {
+    event.preventDefault()
     this.menuTarget.classList.toggle('is-active')
+    this.burgerTarget.classList.toggle('is-active')
   }
 }
