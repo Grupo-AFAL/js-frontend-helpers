@@ -7,6 +7,7 @@ import GoogleMapsLoader from './utils/google-maps-loader'
 import DatepickerController from './controllers/datepicker-controller'
 import DropdownController from './controllers/dropdown-controller'
 import DynamicFieldsController from './controllers/dynamic-fields-controller'
+import LocalModalController from './controllers/local-modal-controller'
 import NavbarController from './controllers/navbar-controller'
 import NotificationController from './controllers/notification-controller'
 import PhoneInputController from './controllers/phone-input-controller'
@@ -29,6 +30,7 @@ export {
   DatepickerController,
   DropdownController,
   DynamicFieldsController,
+  LocalModalController,
   NavbarController,
   NotificationController,
   PhoneInputController,
