@@ -1,13 +1,8 @@
 const API_URL = 'https://maps.googleapis.com/maps/api/js'
 const CALLBACK_NAME = '__googleMapsApiOnLoadCallback'
-
-// const GOOGLE_MAPS_API_KEY = 'AIzaSyDL1sYbvqfeXX_5vah8L-RmnRSPOnQVEKs' // fedegl key
-const GOOGLE_MAPS_API_KEY = 'AIzaSyBRTHabjOtMS_Nc2f9qQSmr1aS6ckSIJT4' // AFAL Key
 const optionsKeys = ['channel', 'client', 'key', 'language', 'region', 'v']
 
 export default function (options = {}) {
-  options.key = GOOGLE_MAPS_API_KEY
-
   return new Promise((resolve, reject) => {
     // Hook up the on load callback
     window[CALLBACK_NAME] = function () {
