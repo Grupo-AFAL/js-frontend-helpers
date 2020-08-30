@@ -40,12 +40,15 @@ export default class RemoteModalController extends Controller {
       ? this.contentWrapper.classList.add('wide')
       : this.contentWrapper.classList.remove('wide')
 
+    this.contentWrapper.classList.add(this.wrapperClass)
+
     this.modal.classList.add('is-active')
     this.content.innerHTML = content
   }
 
   _closeModal = () => {
     this.modal.classList.remove('is-active')
+    this.contentWrapper.classList.remove(this.wrapperClass)
     this.content.innerHTML = ''
   }
 
@@ -84,6 +87,7 @@ export default class RemoteModalController extends Controller {
     event.preventDefault()
     const target = event.currentTarget
 
+    this.wrapperClass = target.getAttribute('data-wrapper-class')
     this.isWide = Boolean(target.getAttribute('data-wide'))
     this.redirectTo = target.getAttribute('data-redirect-to')
     this.skipRender = Boolean(target.getAttribute('data-skip-render'))
