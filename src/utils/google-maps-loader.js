@@ -4,6 +4,10 @@ const optionsKeys = ['channel', 'client', 'key', 'language', 'region', 'v']
 
 export default function (options = {}) {
   return new Promise((resolve, reject) => {
+    if (window.google && window.google.maps) {
+      return resolve(window.google.maps)
+    }
+
     // Hook up the on load callback
     window[CALLBACK_NAME] = function () {
       resolve(window.google.maps)
