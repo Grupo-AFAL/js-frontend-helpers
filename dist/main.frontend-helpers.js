@@ -9194,6 +9194,196 @@ _defineProperty(DynamicFieldsController, "targets", ['template', 'container']);
 
 /***/ }),
 
+/***/ "./src/controllers/file-input-controller.js":
+/*!**************************************************!*\
+  !*** ./src/controllers/file-input-controller.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FileInputController; });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! stimulus */ "stimulus");
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(stimulus__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+/**
+ * File Input Controller
+ * Displays the selected filename in the correct place.
+ *
+ * It expects the following structure:
+ *
+    <div class="file has-name field" data-controller="file-input">
+      <label class="file-label">
+        <%= form.file_field :[fieldName], class: 'file-input', 'data-action': 'file-input#onChange' %>
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </span>
+          <span class="file-label" >
+            Seleccionar Imagen
+          </span>
+        </span>
+        <span class="file-name" data-target="file-input.value">
+          No hay imagen seleccionada
+        </span>
+      </label>
+    </div>
+ */
+
+var FileInputController = /*#__PURE__*/function (_Controller) {
+  _inherits(FileInputController, _Controller);
+
+  var _super = _createSuper(FileInputController);
+
+  function FileInputController() {
+    _classCallCheck(this, FileInputController);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(FileInputController, [{
+    key: "onChange",
+    value: function onChange(event) {
+      var fileName = event.target.value.split('\\').pop();
+      this.valueTarget.innerHTML = fileName;
+    }
+  }]);
+
+  return FileInputController;
+}(stimulus__WEBPACK_IMPORTED_MODULE_0__["Controller"]);
+
+_defineProperty(FileInputController, "targets", ['value', 'input']);
+
+
+
+/***/ }),
+
+/***/ "./src/controllers/local-modal-controller.js":
+/*!***************************************************!*\
+  !*** ./src/controllers/local-modal-controller.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LocalModalController; });
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! stimulus */ "stimulus");
+/* harmony import */ var stimulus__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(stimulus__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+/**
+ * Loads local content into a modal window
+ *
+ * It expects the following structure:
+ *
+ * <section data-controller="local-modal">
+ *   <a href="#" data-action="remote-modal#open" data-content-selector="#contenido-sandwich">
+ *    Descripcion Sandwich
+ *   </a>
+ *
+ *   <div id="modal-template" class="modal">
+ *     <a data-action="remote-modal#close">Cancel</a>
+ *   </div>
+ *
+ *   <div id="contenido-sandwich" class="is-hidden">
+ *     Contenido aleatorio
+ *   </div>
+ * </section>
+ */
+
+var LocalModalController = /*#__PURE__*/function (_Controller) {
+  _inherits(LocalModalController, _Controller);
+
+  var _super = _createSuper(LocalModalController);
+
+  function LocalModalController() {
+    _classCallCheck(this, LocalModalController);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(LocalModalController, [{
+    key: "open",
+    value: function open(event) {
+      var contentSelector;
+
+      if (event.target.dataset.contentSelector) {
+        contentSelector = event.target.dataset.contentSelector;
+      } else {
+        var parent = event.target.closest('[data-content-selector]');
+        contentSelector = parent.dataset.contentSelector;
+      }
+
+      var content = document.querySelector(contentSelector);
+      this.modalTarget.classList.add('is-active');
+      this.modalContentTarget.innerHTML = content.innerHTML;
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.modalTarget.classList.remove('is-active');
+      this.modalContentTarget.innerHTML = '';
+    }
+  }]);
+
+  return LocalModalController;
+}(stimulus__WEBPACK_IMPORTED_MODULE_0__["Controller"]);
+
+_defineProperty(LocalModalController, "targets", ['modal', 'modalContent']);
+
+
+
+/***/ }),
+
 /***/ "./src/controllers/navbar-controller.js":
 /*!**********************************************!*\
   !*** ./src/controllers/navbar-controller.js ***!
@@ -9245,16 +9435,20 @@ var NavbarController = /*#__PURE__*/function (_Controller) {
 
   _createClass(NavbarController, [{
     key: "toggleMenu",
-    value: function toggleMenu(e) {
-      e.preventDefault();
+    value: function toggleMenu(event) {
+      event.preventDefault();
       this.menuTarget.classList.toggle('is-active');
+
+      if (this.hasBurgerTarget) {
+        this.burgerTarget.classList.toggle('is-active');
+      }
     }
   }]);
 
   return NavbarController;
 }(stimulus__WEBPACK_IMPORTED_MODULE_0__["Controller"]);
 
-_defineProperty(NavbarController, "targets", ['menu']);
+_defineProperty(NavbarController, "targets", ['menu', 'burger']);
 
 
 
@@ -9613,6 +9807,8 @@ var RemoteModalController = /*#__PURE__*/function (_Controller) {
     _defineProperty(_assertThisInitialized(_this), "_closeModal", function () {
       _this.modal.classList.remove('is-active');
 
+      _this.contentWrapper.classList.remove(_this.wrapperClass);
+
       _this.content.innerHTML = '';
     });
 
@@ -9649,6 +9845,7 @@ var RemoteModalController = /*#__PURE__*/function (_Controller) {
     _defineProperty(_assertThisInitialized(_this), "open", function (event) {
       event.preventDefault();
       var target = event.currentTarget;
+      _this.wrapperClass = target.getAttribute('data-wrapper-class');
       _this.isWide = Boolean(target.getAttribute('data-wide'));
       _this.redirectTo = target.getAttribute('data-redirect-to');
       _this.skipRender = Boolean(target.getAttribute('data-skip-render'));
@@ -9740,6 +9937,7 @@ var RemoteModalController = /*#__PURE__*/function (_Controller) {
     key: "_openModal",
     value: function _openModal(content) {
       this.isWide ? this.contentWrapper.classList.add('wide') : this.contentWrapper.classList.remove('wide');
+      this.contentWrapper.classList.add(this.wrapperClass);
       this.modal.classList.add('is-active');
       this.content.innerHTML = content;
     }
@@ -10237,6 +10435,30 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
+/**
+ * Tabs controller
+ *
+ * <div data-controller="tabs">
+ *   <div class="tabs">
+ *     <ul>
+ *       <li class="is-active" data-tab-index="1" data-action="click->tabs#open">
+ *         <a>Activities</a>
+ *       </li>
+ *       <li data-tab-index="2" data-action="click->tabs#open">
+ *         <a>Other tab</a>
+ *       </li>
+ *     </ul>
+ *   </div>
+ *   <div class="content">
+ *     <div data-content-index="1">
+ *       Activities tab content
+ *     </div>
+ *     <div data-content-index="2" class="is-hidden">
+ *       Other tab content
+ *     </div>
+ *   </div>
+ * </div>
+ */
 
 var TabsController = /*#__PURE__*/function (_Controller) {
   _inherits(TabsController, _Controller);
@@ -10392,7 +10614,7 @@ _defineProperty(TooltipController, "targets", ['subject']);
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: url, time, domHelpers, formatters, GoogleMapsLoader, DatepickerController, DropdownController, DynamicFieldsController, NavbarController, NotificationController, PhoneInputController, RadioGroupController, RemoteModalController, SelectFieldController, SideMenuController, StepNumberInputController, SubmitButtonController, SubmitOnChangeController, TabsController, TooltipController */
+/*! exports provided: url, time, domHelpers, formatters, GoogleMapsLoader, DatepickerController, DropdownController, DynamicFieldsController, LocalModalController, NavbarController, NotificationController, PhoneInputController, RadioGroupController, RemoteModalController, SelectFieldController, SideMenuController, StepNumberInputController, SubmitButtonController, SubmitOnChangeController, TabsController, TooltipController, FileInputController */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10417,41 +10639,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_dynamic_fields_controller__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/dynamic-fields-controller */ "./src/controllers/dynamic-fields-controller.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DynamicFieldsController", function() { return _controllers_dynamic_fields_controller__WEBPACK_IMPORTED_MODULE_7__["default"]; });
 
-/* harmony import */ var _controllers_navbar_controller__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/navbar-controller */ "./src/controllers/navbar-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NavbarController", function() { return _controllers_navbar_controller__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+/* harmony import */ var _controllers_local_modal_controller__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/local-modal-controller */ "./src/controllers/local-modal-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LocalModalController", function() { return _controllers_local_modal_controller__WEBPACK_IMPORTED_MODULE_8__["default"]; });
 
-/* harmony import */ var _controllers_notification_controller__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/notification-controller */ "./src/controllers/notification-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationController", function() { return _controllers_notification_controller__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+/* harmony import */ var _controllers_navbar_controller__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/navbar-controller */ "./src/controllers/navbar-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NavbarController", function() { return _controllers_navbar_controller__WEBPACK_IMPORTED_MODULE_9__["default"]; });
 
-/* harmony import */ var _controllers_phone_input_controller__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/phone-input-controller */ "./src/controllers/phone-input-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PhoneInputController", function() { return _controllers_phone_input_controller__WEBPACK_IMPORTED_MODULE_10__["default"]; });
+/* harmony import */ var _controllers_notification_controller__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/notification-controller */ "./src/controllers/notification-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationController", function() { return _controllers_notification_controller__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
-/* harmony import */ var _controllers_radio_group_controller__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./controllers/radio-group-controller */ "./src/controllers/radio-group-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadioGroupController", function() { return _controllers_radio_group_controller__WEBPACK_IMPORTED_MODULE_11__["default"]; });
+/* harmony import */ var _controllers_phone_input_controller__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./controllers/phone-input-controller */ "./src/controllers/phone-input-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PhoneInputController", function() { return _controllers_phone_input_controller__WEBPACK_IMPORTED_MODULE_11__["default"]; });
 
-/* harmony import */ var _controllers_remote_modal_controller__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./controllers/remote-modal-controller */ "./src/controllers/remote-modal-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RemoteModalController", function() { return _controllers_remote_modal_controller__WEBPACK_IMPORTED_MODULE_12__["default"]; });
+/* harmony import */ var _controllers_radio_group_controller__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./controllers/radio-group-controller */ "./src/controllers/radio-group-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadioGroupController", function() { return _controllers_radio_group_controller__WEBPACK_IMPORTED_MODULE_12__["default"]; });
 
-/* harmony import */ var _controllers_select_field_controller__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./controllers/select-field-controller */ "./src/controllers/select-field-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectFieldController", function() { return _controllers_select_field_controller__WEBPACK_IMPORTED_MODULE_13__["default"]; });
+/* harmony import */ var _controllers_remote_modal_controller__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./controllers/remote-modal-controller */ "./src/controllers/remote-modal-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RemoteModalController", function() { return _controllers_remote_modal_controller__WEBPACK_IMPORTED_MODULE_13__["default"]; });
 
-/* harmony import */ var _controllers_side_menu_controller__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/side-menu-controller */ "./src/controllers/side-menu-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SideMenuController", function() { return _controllers_side_menu_controller__WEBPACK_IMPORTED_MODULE_14__["default"]; });
+/* harmony import */ var _controllers_select_field_controller__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/select-field-controller */ "./src/controllers/select-field-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectFieldController", function() { return _controllers_select_field_controller__WEBPACK_IMPORTED_MODULE_14__["default"]; });
 
-/* harmony import */ var _controllers_step_number_input_controller__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/step-number-input-controller */ "./src/controllers/step-number-input-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StepNumberInputController", function() { return _controllers_step_number_input_controller__WEBPACK_IMPORTED_MODULE_15__["default"]; });
+/* harmony import */ var _controllers_side_menu_controller__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/side-menu-controller */ "./src/controllers/side-menu-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SideMenuController", function() { return _controllers_side_menu_controller__WEBPACK_IMPORTED_MODULE_15__["default"]; });
 
-/* harmony import */ var _controllers_submit_button_controller__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/submit-button-controller */ "./src/controllers/submit-button-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SubmitButtonController", function() { return _controllers_submit_button_controller__WEBPACK_IMPORTED_MODULE_16__["default"]; });
+/* harmony import */ var _controllers_step_number_input_controller__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/step-number-input-controller */ "./src/controllers/step-number-input-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StepNumberInputController", function() { return _controllers_step_number_input_controller__WEBPACK_IMPORTED_MODULE_16__["default"]; });
 
-/* harmony import */ var _controllers_submit_on_change_controller__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./controllers/submit-on-change-controller */ "./src/controllers/submit-on-change-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SubmitOnChangeController", function() { return _controllers_submit_on_change_controller__WEBPACK_IMPORTED_MODULE_17__["default"]; });
+/* harmony import */ var _controllers_submit_button_controller__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./controllers/submit-button-controller */ "./src/controllers/submit-button-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SubmitButtonController", function() { return _controllers_submit_button_controller__WEBPACK_IMPORTED_MODULE_17__["default"]; });
 
-/* harmony import */ var _controllers_tabs_controller__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./controllers/tabs-controller */ "./src/controllers/tabs-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabsController", function() { return _controllers_tabs_controller__WEBPACK_IMPORTED_MODULE_18__["default"]; });
+/* harmony import */ var _controllers_submit_on_change_controller__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./controllers/submit-on-change-controller */ "./src/controllers/submit-on-change-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SubmitOnChangeController", function() { return _controllers_submit_on_change_controller__WEBPACK_IMPORTED_MODULE_18__["default"]; });
 
-/* harmony import */ var _controllers_tooltip_controller__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./controllers/tooltip-controller */ "./src/controllers/tooltip-controller.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TooltipController", function() { return _controllers_tooltip_controller__WEBPACK_IMPORTED_MODULE_19__["default"]; });
+/* harmony import */ var _controllers_tabs_controller__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./controllers/tabs-controller */ "./src/controllers/tabs-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabsController", function() { return _controllers_tabs_controller__WEBPACK_IMPORTED_MODULE_19__["default"]; });
+
+/* harmony import */ var _controllers_tooltip_controller__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./controllers/tooltip-controller */ "./src/controllers/tooltip-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TooltipController", function() { return _controllers_tooltip_controller__WEBPACK_IMPORTED_MODULE_20__["default"]; });
+
+/* harmony import */ var _controllers_file_input_controller__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./controllers/file-input-controller */ "./src/controllers/file-input-controller.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FileInputController", function() { return _controllers_file_input_controller__WEBPACK_IMPORTED_MODULE_21__["default"]; });
+
+
 
 
 
@@ -10650,16 +10880,16 @@ var indexById = function indexById(array) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var API_URL = 'https://maps.googleapis.com/maps/api/js';
-var CALLBACK_NAME = '__googleMapsApiOnLoadCallback'; // const GOOGLE_MAPS_API_KEY = 'AIzaSyDL1sYbvqfeXX_5vah8L-RmnRSPOnQVEKs' // fedegl key
-
-var GOOGLE_MAPS_API_KEY = 'AIzaSyBRTHabjOtMS_Nc2f9qQSmr1aS6ckSIJT4'; // AFAL Key
-
+var CALLBACK_NAME = '__googleMapsApiOnLoadCallback';
 var optionsKeys = ['channel', 'client', 'key', 'language', 'region', 'v'];
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  options.key = GOOGLE_MAPS_API_KEY;
   return new Promise(function (resolve, reject) {
-    // Hook up the on load callback
+    if (window.google && window.google.maps) {
+      return resolve(window.google.maps);
+    } // Hook up the on load callback
+
+
     window[CALLBACK_NAME] = function () {
       resolve(window.google.maps);
       delete window[CALLBACK_NAME];
