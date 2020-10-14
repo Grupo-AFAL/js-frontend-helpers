@@ -28,7 +28,14 @@ export default class FileInputController extends Controller {
   static targets = ['value', 'input']
 
   onChange (event) {
-    const fileName = event.target.value.split('\\').pop()
+    let fileName
+
+    if (event.target.value.length == 0) {
+      fileName = this.data.get('nonSelectedText')
+    } else {
+      fileName = event.target.value.split('\\').pop()
+    }
+
     this.valueTarget.innerHTML = fileName
   }
 }
