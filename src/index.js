@@ -20,6 +20,7 @@ import SubmitButtonController from './controllers/submit-button-controller'
 import SubmitOnChangeController from './controllers/submit-on-change-controller'
 import TabsController from './controllers/tabs-controller'
 import TooltipController from './controllers/tooltip-controller'
+import FileInputController from './controllers/file-input-controller'
 
 export {
   url,
@@ -42,5 +43,6 @@ export {
   SubmitButtonController,
   SubmitOnChangeController,
   TabsController,
-  TooltipController
+  TooltipController,
+  FileInputController
 }
