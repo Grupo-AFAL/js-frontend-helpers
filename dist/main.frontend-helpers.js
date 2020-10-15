@@ -9269,7 +9269,14 @@ var FileInputController = /*#__PURE__*/function (_Controller) {
   _createClass(FileInputController, [{
     key: "onChange",
     value: function onChange(event) {
-      var fileName = event.target.value.split('\\').pop();
+      var fileName;
+
+      if (event.target.value.length == 0) {
+        fileName = this.data.get('nonSelectedText');
+      } else {
+        fileName = event.target.value.split('\\').pop();
+      }
+
       this.valueTarget.innerHTML = fileName;
     }
   }]);
@@ -10309,7 +10316,7 @@ var SubmitButtonController = /*#__PURE__*/function (_Controller) {
       var form = e.target.closest('form');
       this.disableButton(e.target); // Return early if HTML form is invalid.
 
-      if (form && !form.checkValidity()) {
+      if (form && !form.reportValidity()) {
         setTimeout(function () {
           return _this.enableButton(e.target);
         }, 500);

@@ -6,7 +6,7 @@ export default class SubmitButtonController extends Controller {
     this.disableButton(e.target)
 
     // Return early if HTML form is invalid.
-    if (form && !form.checkValidity()) {
+    if (form && !form.reportValidity()) {
       setTimeout(() => this.enableButton(e.target), 500)
       return
     }
