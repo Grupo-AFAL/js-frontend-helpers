@@ -1,6 +1,5 @@
 import { Controller } from 'stimulus'
 import camelCase from 'lodash.camelcase'
-import { serialize } from '../utils/form'
 
 /**
  * Loads remote content into a modal window and handles form submission
@@ -132,10 +131,7 @@ export default class RemoteModalController extends Controller {
       mode: 'same-origin',
       redirect: 'follow',
       credentials: 'include',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: serialize(form)
+      body: new FormData(form)
     }
 
     let redirected = false
