@@ -37,16 +37,20 @@ export default class StepNumberInputController extends Controller {
     this.value = Math.max(Math.min(this.value, this.maxValue), this.minValue)
     this.inputTarget.value = this.value
 
-    if (this.value === this.maxValue) {
-      this.addTarget.classList.add('is-static')
-    } else {
-      this.addTarget.classList.remove('is-static')
+    if (this.hasAddTarget) {
+      if (this.value === this.maxValue) {
+        this.addTarget.classList.add('is-static')
+      } else {
+        this.addTarget.classList.remove('is-static')
+      }
     }
 
-    if (this.value === this.minValue) {
-      this.subtractTarget.classList.add('is-static')
-    } else {
-      this.subtractTarget.classList.remove('is-static')
+    if (this.hasSubtractTarget) {
+      if (this.value === this.minValue) {
+        this.subtractTarget.classList.add('is-static')
+      } else {
+        this.subtractTarget.classList.remove('is-static')
+      }
     }
   }
 
