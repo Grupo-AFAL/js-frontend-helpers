@@ -8,41 +8,46 @@ import {
 } from '../utils/domHelpers'
 
 export default class DynamicFieldsController extends Controller {
-  static targets = ['template', 'container']
+  static targets = ['template', 'container', 'button']
 
   connect () {
     this.fieldsSelector = this.data.get('selector')
+    this.removeDuplicates = this.data.get('removeDuplicates')
+    if (this.isAtMaximumSize()) {
+      this.buttonTarget.setAttribute('disabled', true)
+    }
   }
 
   addFields (e) {
     e.preventDefault()
+    if (this.isAtMaximumSize()) return false
 
-    const newSize = parseInt(this.data.get('size')) + 1
-    this.data.set('size', newSize)
+    this.setSize(this.getSize() + 1)
 
-    const template = replaceInFragment(
-      this.templateTarget,
-      /new_record/g,
-      getTimestamp()
-    )
+    const template = this.removeDuplicates
+      ? this.templateFragmentWithoutDuplicates()
+      : this.templateFragment()
 
     const positionInput = template.querySelector('[data-position]')
-    if (positionInput) positionInput.value = newSize
-
+    if (positionInput) positionInput.value = this.getSize()
     this.containerTarget.appendChild(template)
+
+    if (this.isAtMaximumSize()) {
+      this.buttonTarget.setAttribute('disabled', true)
+    }
   }
 
   removeFields (e) {
     e.preventDefault()
-
-    const newSize = parseInt(this.data.get('size')) - 1
-    this.data.set('size', newSize)
+    this.setSize(this.getSize() - 1)
 
     const fieldsContainer = e.target.closest(this.fieldsSelector)
-
     fieldsContainer.style.display = 'none'
     removeNonHiddenFormElements(fieldsContainer)
     fieldsContainer.querySelector('.destroy-flag').value = true
+
+    if (this.buttonTarget.hasAttribute('disabled'))
+      this.buttonTarget.removeAttribute('disabled')
   }
 
   moveUp (e) {
@@ -82,8 +87,49 @@ export default class DynamicFieldsController extends Controller {
   }
 
   resetPositionValues () {
-    document.querySelectorAll(this.fieldsSelector).forEach((fields, index) => {
-      fields.querySelector('[data-position]').value = index + 1
+    this.element
+      .querySelectorAll(this.fieldsSelector)
+      .forEach((fields, index) => {
+        fields.querySelector('[data-position]').value = index + 1
+      })
+  }
+
+  templateFragment () {
+    return replaceInFragment(this.templateTarget, /new_record/g, getTimestamp())
+  }
+
+  templateFragmentWithoutDuplicates () {
+    // Get currently selected values
+    const selectedValues = Array.from(
+      this.element.querySelectorAll(`${this.fieldsSelector} select`)
+    ).map(node => node.value)
+
+    // Remove already selected values
+    const template = this.templateFragment()
+    template.querySelectorAll('select option').forEach(option => {
+      if (selectedValues.includes(option.value)) {
+        option.remove()
+      }
     })
+
+    return template
+  }
+
+  dropdownOptionsSize () {
+    return this.templateFragment().querySelectorAll('select option').length
+  }
+
+  isAtMaximumSize () {
+    return (
+      this.removeDuplicates && this.dropdownOptionsSize() === this.getSize()
+    )
+  }
+
+  getSize () {
+    return parseInt(this.data.get('size'))
+  }
+
+  setSize (size) {
+    this.data.set('size', size)
   }
 }
