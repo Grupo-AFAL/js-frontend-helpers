@@ -27,6 +27,11 @@ export default class RemoteModalController extends Controller {
 
     this.background.addEventListener('click', this._closeModal)
     this.closeBtn.addEventListener('click', this._closeModal)
+
+    document.addEventListener('openModal', e => {
+      this.setOptions(e.detail.options)
+      this.openModal(e.detail.content)
+    })
   }
 
   disconnect () {
@@ -34,7 +39,7 @@ export default class RemoteModalController extends Controller {
     this.closeBtn.removeEventListener('click', this._closeModal)
   }
 
-  _openModal (content) {
+  openModal (content) {
     this.isWide
       ? this.contentWrapper.classList.add('wide')
       : this.contentWrapper.classList.remove('wide')
@@ -43,6 +48,13 @@ export default class RemoteModalController extends Controller {
 
     this.modal.classList.add('is-active')
     this.content.innerHTML = content
+  }
+
+  setOptions (options) {
+    const keys = Object.keys(options)
+    keys.forEach((key, _i) => {
+      this[key] = options[key]
+    })
   }
 
   _closeModal = () => {
@@ -94,7 +106,7 @@ export default class RemoteModalController extends Controller {
 
     fetch(this._buildURL(target.href))
       .then(response => response.text())
-      .then(body => this._openModal(body))
+      .then(body => this.openModal(body))
   }
 
   close = event => {
@@ -163,7 +175,7 @@ export default class RemoteModalController extends Controller {
             this._replaceBodyAndURL(responseText, redirectURL)
           }
         } else {
-          this._openModal(responseText)
+          this.openModal(responseText)
         }
       })
   }
