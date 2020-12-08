@@ -46,8 +46,9 @@ export default class DynamicFieldsController extends Controller {
     removeNonHiddenFormElements(fieldsContainer)
     fieldsContainer.querySelector('.destroy-flag').value = true
 
-    if (this.buttonTarget.hasAttribute('disabled'))
+    if (this.hasButtonTarget && this.buttonTarget.hasAttribute('disabled')) {
       this.buttonTarget.removeAttribute('disabled')
+    }
   }
 
   moveUp (e) {
