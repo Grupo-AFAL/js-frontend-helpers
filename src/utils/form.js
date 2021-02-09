@@ -34,3 +34,32 @@ export const getFormElementData = element => {
 
   return [{ name: element.name, value: element.value }]
 }
+
+/**
+ * Submits a Form with JavaScript and returns the response text
+ * and status.
+ *
+ * @param {HTMLFormElement} formElement - Form element to be submitted
+ * @returns {Promise} Promise resolves to an Object with { responseText, ok }
+ */
+export const submitForm = async formElement => {
+  const formURL = formElement.getAttribute('action')
+  const options = {
+    method: 'POST',
+    mode: 'same-origin',
+    redirect: 'follow',
+    credentials: 'include',
+    body: new FormData(formElement)
+  }
+
+  return new Promise((resolve, reject) => {
+    let ok
+
+    fetch(formURL, options)
+      .then(response => {
+        ok = response.ok
+        return response.text()
+      })
+      .then(responseText => resolve({ responseText, ok }))
+  })
+}

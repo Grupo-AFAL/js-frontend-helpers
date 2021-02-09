@@ -1,8 +1,9 @@
-import * as url from './utils/url'
-import * as time from './utils/time'
 import * as domHelpers from './utils/domHelpers'
 import * as formatters from './utils/formatters'
+import * as form from './utils/form'
 import GoogleMapsLoader from './utils/google-maps-loader'
+import * as time from './utils/time'
+import * as url from './utils/url'
 
 import DatepickerController from './controllers/datepicker-controller'
 import DropdownController from './controllers/dropdown-controller'
@@ -23,11 +24,12 @@ import TooltipController from './controllers/tooltip-controller'
 import FileInputController from './controllers/file-input-controller'
 
 export {
-  url,
-  time,
   domHelpers,
+  form,
   formatters,
   GoogleMapsLoader,
+  time,
+  url,
   DatepickerController,
   DropdownController,
   DynamicFieldsController,

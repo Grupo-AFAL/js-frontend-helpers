@@ -9,6 +9,17 @@ export const stringToDOMNode = htmlString => {
   return template.content
 }
 
+/**
+ * Replaces a Node with the an HTML string fragment
+ *
+ * @param {HTMLElement} oldNode - DOM Node to be replaced
+ * @param {string} htmlString - HTML string with the new node
+ */
+export const replaceDOMNode = (oldNode, htmlString) => {
+  const newNode = stringToDOMNode(htmlString)
+  oldNode.parentNode.replaceChild(newNode, oldNode)
+}
+
 export const removeNonHiddenFormElements = fragment => {
   const removeNodes = input => {
     if (input.type === 'hidden') return
