@@ -10,8 +10,8 @@ export default class DatepickerController extends Controller {
     let dateFormat
 
     if (noCalendar) {
-      altFormat = 'h:i:K'
-      dateFormat = 'H:i'
+      altFormat = 'h:i K'
+      dateFormat = 'Y-m-d H:i'
     } else {
       altFormat = enableTime ? 'F j, Y h:i K' : 'F j, Y'
       dateFormat = enableTime ? 'Y-m-d H:i' : 'Y-m-d'
