@@ -1,26 +1,23 @@
 import { Controller } from 'stimulus'
 
 export default class SubmitButtonController extends Controller {
-  submit (e) {
-    const form = e.target.closest('form')
-    this.disableButton(e.target)
+  connect () {
+    this.element.addEventListener('turbo:submit-start', e => {
+      this.disableButton(e.detail.formSubmission.submitter)
+    })
 
-    // Return early if HTML form is invalid.
-    if (form && !form.reportValidity()) {
-      setTimeout(() => this.enableButton(e.target), 500)
-      return
-    }
-
-    form.submit()
+    this.element.addEventListener('turbo:submit-end', e => {
+      this.enableButton(e.detail.formSubmission.submitter)
+    })
   }
 
-  disableButton (target) {
-    target.classList.add('is-loading')
-    target.setAttribute('disabled', '')
+  disableButton (button) {
+    button.classList.add('is-loading')
+    button.setAttribute('disabled', '')
   }
 
-  enableButton (target) {
-    target.classList.remove('is-loading')
-    target.removeAttribute('disabled')
+  enableButton (button) {
+    button.classList.remove('is-loading')
+    button.removeAttribute('disabled')
   }
 }
