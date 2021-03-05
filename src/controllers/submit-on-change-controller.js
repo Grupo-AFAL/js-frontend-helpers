@@ -3,6 +3,6 @@ import { navigator } from '@hotwired/turbo'
 
 export default class SubmitOnChangeController extends Controller {
   submit () {
-    navigator.element.submit()
+    navigator.submitForm(this.element)
   }
 }
